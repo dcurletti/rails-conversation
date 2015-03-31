@@ -1,5 +1,12 @@
 Conversations:
 
+Assumptions:
 I attempted to model this exercise off of iMessage.  The basic concept being that every message sent to another user, or group of users, creates a new conversation.  In doing so, there is no needed to differentiate between a private message or a group message, all messages are private (between two parties) until either of the participants invites a new user.  
 
 When wanting to create a group conversation, the user would merely have to intput multiple numbers/usernames and the controller would create a new conversation entry, as well as entries in the ConversationParticipant table for each of the invited members, that way they would have access to it.
+
+Thoughts on the exercise:
+I was a bit unclear on the "A message can be sent to multiple users".  If for some reason there was a need to have a single message link to multiple conversations (rather than just creating a new message entry for each new conversation), then I could have created another join-table called ConversationMessages that would have had two foreign keys: message_id and conversation_id.  
+
+What I could have done better:
+The one thing I regret doing was naming my join table ConversationParticipants. I should have named it ConversationMembership or something along those lines.
