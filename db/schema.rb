@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150331192928) do
+ActiveRecord::Schema.define(version: 20150331202033) do
+
+  create_table "attachments", force: :cascade do |t|
+    t.integer  "message_id", null: false
+    t.binary   "picture",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "conversation_participants", force: :cascade do |t|
     t.integer  "user_id",         null: false
