@@ -1,28 +1,5 @@
-== README
+Conversations:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+I attempted to model this exercise off of iMessage.  The basic concept being that every message sent to another user, or group of users, creates a new conversation.  In doing so, there is no needed to differentiate between a private message or a group message, all messages are private (between two parties) until either of the participants invites a new user.  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+When wanting to create a group conversation, the user would merely have to intput multiple numbers/usernames and the controller would create a new conversation entry, as well as entries in the ConversationParticipant table for each of the invited members, that way they would have access to it.
