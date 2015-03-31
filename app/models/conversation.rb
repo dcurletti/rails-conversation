@@ -7,7 +7,7 @@ class Conversation < ActiveRecord::Base
 	has_many(
 		:conversation_participants,
 		primary_key: :id,
-		foreign_key: :conversation_id
+		foreign_key: :conversation_id,
 		class_name: "ConversationParticipant"
 	)
 
@@ -15,6 +15,12 @@ class Conversation < ActiveRecord::Base
 		:participants,
 		through: :conversation_participants,
 		source: :user
+	)
+
+	has_many(
+		:attachments,
+		through: :messages,
+		source: :attachments	
 	)
 
 end

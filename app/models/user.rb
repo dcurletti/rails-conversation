@@ -14,4 +14,10 @@ class User < ActiveRecord::Base
 		source: :conversation
 	)
 
+	has_many(
+		:attachments,
+		through: :messages,
+		source: :attachments	
+	)
+
 end
